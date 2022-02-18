@@ -1,0 +1,38 @@
+###json in list format because i changed the code to post a list of arrays:
+[{
+	"email":"daniel@email.com",
+	"imageUrl": "https://bootdey.com/img/Content/avatar/avatar1.png",
+	"jobTitle": "Javascript",
+	"name": "Daniel Craig",
+	"phone": "933012568"
+},
+{
+	"email":"christine@email.com",
+	"imageUrl": "https://bootdey.com/img/Content/avatar/avatar3.png",
+	"jobTitle": "UX/UI",
+	"name": "Christine Smith",
+	"phone": "9312212533"
+},
+{
+	"email":"dave@email.com",
+	"imageUrl": "https://bootdey.com/img/Content/avatar/avatar7.png",
+	"jobTitle": "Java",
+	"name": "Dave Rogers",
+	"phone": "9312123433"
+},
+{
+	"email":"andy@email.com",
+	"imageUrl": "https://bootdey.com/img/Content/avatar/avatar2.png",
+	"jobTitle": "SQL",
+	"name": "Andy Maxwell",
+	"phone": "9312963833"
+}]
+
+####unique format when we're not passing a list:
+{
+	"email":"andy@email.com",
+	"imageUrl": "https://bootdey.com/img/Content/avatar/avatar2.png",
+	"jobTitle": "SQL",
+	"name": "Andy Maxwell",
+	"phone": "9312963833"
+}

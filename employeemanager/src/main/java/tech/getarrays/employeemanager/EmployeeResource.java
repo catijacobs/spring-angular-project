@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import tech.getarrays.employeemanager.model.Employee;
 import tech.getarrays.employeemanager.service.EmployeeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,13 @@ public class EmployeeResource {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
-        Employee newEmployee = employeeService.addEmployee(employee);
-        return new ResponseEntity<>(newEmployee,HttpStatus.CREATED);
+    public ResponseEntity<List<Employee>> addEmployee(@RequestBody List<Employee> employees){
+        List<Employee> newEmployees = new ArrayList<>();
+        for(Employee emp : employees) {
+            Employee newEmployee = employeeService.addEmployee(emp);
+            newEmployees.add(newEmployee);
+        }
+        return new ResponseEntity<>(newEmployees,HttpStatus.CREATED);
     }
 
     @PutMapping("/update")

@@ -34,6 +34,7 @@ public class EmployeeService {
         return employeeRepo.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException("User by id" + id + "was note found"));
     }
 
+
     public void deleteEmployee(Long id){
         employeeRepo.deleteEmployeeById(id);
     }

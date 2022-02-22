@@ -1,0 +1,10 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 167 ciObject found
+instanceKlass org/slf4j/Marker
+instanceKlass sun/security/ssl/Alert$AlertConsumer
+instanceKlass com/zaxxer/hikari/pool/HikariPool$$Lambda$982
+instanceKlass org/hibernate/engine/internal/EntityEntryContext$EntityEntryCrossRefImpl
+instanceKlass org/hibernate/engine/internal/EntityEntryContext$EntityEntryCrossRef
+instanceKlass org/springframework/web/method/annotation/SessionAttributesHandler$$Lambda$981

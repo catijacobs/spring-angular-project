@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import tech.getarrays.employeemanager.model.Employee;
 import tech.getarrays.employeemanager.service.EmployeeService;
 
-import java.util.ArrayList;
+
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -30,14 +31,20 @@ public class EmployeeResource {
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
+//    @PostMapping("/add")
+//    public ResponseEntity<List<Employee>> addEmployee(@RequestBody List<Employee> employees){
+//        List<Employee> newEmployees = new ArrayList<>();
+//        for(Employee emp : employees) {
+//            Employee newEmployee = employeeService.addEmployee(emp);
+//            newEmployees.add(newEmployee);
+//        }
+//        return new ResponseEntity<>(newEmployees,HttpStatus.CREATED);
+//    }
+
     @PostMapping("/add")
-    public ResponseEntity<List<Employee>> addEmployee(@RequestBody List<Employee> employees){
-        List<Employee> newEmployees = new ArrayList<>();
-        for(Employee emp : employees) {
-            Employee newEmployee = employeeService.addEmployee(emp);
-            newEmployees.add(newEmployee);
-        }
-        return new ResponseEntity<>(newEmployees,HttpStatus.CREATED);
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        Employee newEmployee = employeeService.addEmployee(employee);
+        return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
@@ -46,6 +53,7 @@ public class EmployeeResource {
         return new ResponseEntity<>(updateEmployee,HttpStatus.CREATED);
     }
 
+    @Transactional
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id){
         employeeService.deleteEmployee(id);
